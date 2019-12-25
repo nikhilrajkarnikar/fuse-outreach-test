@@ -2,8 +2,9 @@ import React from "react";
 import authClient from "auth0-js";
 
 import Body from "./Body"
+import Footer from "./Home"
 
-function App() {
+function App() {  
   var auth0 = new authClient.WebAuth({
     domain: 'test-nik.auth0.com',
     clientID: 'sjC7MbqMIS7YDmHTntHDLsDpTPAZJEBW'
@@ -23,6 +24,7 @@ function App() {
       <Body 
         login={login}
       />
+      {/* <Footer /> */}
     </div>
   );
 }
