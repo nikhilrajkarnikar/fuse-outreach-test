@@ -1,10 +1,17 @@
 import React from "react";
 import authClient from "auth0-js";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
 import Body from "./Body"
-import Footer from "./Home"
+import Callback from "./Callback"
+import Test from "./test"
 
-function App() {  
+function App() {
   var auth0 = new authClient.WebAuth({
     domain: 'test-nik.auth0.com',
     clientID: 'sjC7MbqMIS7YDmHTntHDLsDpTPAZJEBW'
@@ -21,10 +28,30 @@ function App() {
 
   return (
     <div>
-      <Body 
+      <Body
         login={login}
       />
-      {/* <Footer /> */}
+      <Router>
+        <div>
+          <ul>
+            <li>
+              <Link to="/">Callback</Link>
+            </li>
+            <li>
+             <Link to="/test">test</Link>
+            </li>
+          </ul>
+          <hr/>
+          <Switch>
+            <Route exact path="/">
+              <Callback />
+            </Route>
+            <Route path="/Test">
+              <Test />
+            </Route>
+          </Switch>
+        </div>
+      </Router>
     </div>
   );
 }

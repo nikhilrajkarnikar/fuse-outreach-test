@@ -16,14 +16,6 @@ body {
   align-items: center;
   padding-top: 40px;
   padding-bottom: 40px;
-  background-color: #f5f5f5;
-}
-
-p{
-  font-size: small;
-  text-align: center;
-  color: gray;
-  font-weight: bolder;
 }
 
 .fullscreen {
